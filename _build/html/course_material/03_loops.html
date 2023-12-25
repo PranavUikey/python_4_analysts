@@ -1,0 +1,1041 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops &#8212; Python Course</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lists" href="04_list.html" />
+    <link rel="prev" title="Flow Control" href="02_flow_control.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_com.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Course</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_expressions.html">
+   Expressions
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_flow_control.html">
+   Flow Control
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_list.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_tuple_n_dictionaries.html">
+   Tuple
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_strings.html">
+   Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_OOP.html">
+   Oject Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_files.html">
+   File Handling
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/course_material/03_loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loop">
+   while loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#range-function">
+   range() function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loop">
+   for loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#break-statement">
+   break statement :
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continue-statement">
+   continue statement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-loops">
+   Types of loops:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-loops">
+     1 . Nested Loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#infinite-loop">
+     2 . Infinite Loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-else-loop">
+     3 . for-else loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-else-loop">
+     4 . while-else loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pass-keyword">
+     5 .
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pass
+      </span>
+     </code>
+     keyword
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-test-loop-and-post-test-loop">
+   Pre-test loop and Post-test loop
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pres-test-while-loop">
+     1 . Pres-test(while loop)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#post-test-loop-do-while-loop">
+     2 . Post-test loop (do-while loop)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-questions">
+   Practice Questions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#difficulty-level-easy">
+     Difficulty Level : Easy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#difficulty-level-medium">
+     Difficulty Level : Medium
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#difficulty-level-hard">
+     Difficulty Level : Hard
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Loops</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loop">
+   while loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#range-function">
+   range() function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loop">
+   for loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#break-statement">
+   break statement :
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continue-statement">
+   continue statement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-loops">
+   Types of loops:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nested-loops">
+     1 . Nested Loops
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#infinite-loop">
+     2 . Infinite Loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-else-loop">
+     3 . for-else loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#while-else-loop">
+     4 . while-else loop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pass-keyword">
+     5 .
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pass
+      </span>
+     </code>
+     keyword
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-test-loop-and-post-test-loop">
+   Pre-test loop and Post-test loop
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pres-test-while-loop">
+     1 . Pres-test(while loop)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#post-test-loop-do-while-loop">
+     2 . Post-test loop (do-while loop)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-questions">
+   Practice Questions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#difficulty-level-easy">
+     Difficulty Level : Easy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#difficulty-level-medium">
+     Difficulty Level : Medium
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#difficulty-level-hard">
+     Difficulty Level : Hard
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="loops">
+<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h1>
+<p>A loop is a construct that allows a set of instructions to be repeated multiple times until a certain condition is met.</p>
+<ul class="simple">
+<li><p>Iteration is a technique that allows to execute a block of statements repeatedly.</p></li>
+<li><p><strong>Definition :</strong> Repeated execution of a set of statements is called <strong>iteration</strong>.</p></li>
+<li><p>The programming constructs used for iteration are while , for , break , continue and so on .</p></li>
+</ul>
+<p>Let us discuss the iteration techniques with the help of illustrative examples.
+There are several types of loops:</p>
+<div class="section" id="while-loop">
+<h2>while loop<a class="headerlink" href="#while-loop" title="Permalink to this headline">¶</a></h2>
+<p>A while loop is a type of control flow statement in programming that allows a piece of code to be executed repeatedly as long as a certain condition is true.</p>
+<p>The condition in the while loop is evaluated before each iteration of the loop. If the condition is true, the code inside the loop is executed. This process continues until the condition becomes false, at which point the loop terminates and control passes to the next statement in the program.</p>
+<p>Here’s an example of a simple while loop in Python that prints the numbers from 1 to 5:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>           <span class="c1"># iniialization</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>   <span class="c1"># condition</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>      <span class="c1"># increment</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, the loop starts with i equal to 1, and the condition is that i is less than or equal to 5. Inside the loop, the value of i is printed and then incremented by 1. The loop continues to execute until i becomes 6, at which point the condition becomes false and the loop terminates. The output of this program would be:</p>
+<p>Let’s take an example of while loop which will print all numbers divisible by 5 starting from 10 to 20.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>          <span class="c1"># initialize `x` at 10 because our starting point is 10</span>
+<span class="k">while</span>  <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span> <span class="c1"># condition to check till `x` becomes 20</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="c1"># condition to check the number divisible by 5.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span>         <span class="c1"># increment `x` by 1 (The short version of writing the same thing is x+=1) )</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+15
+20
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can do the same thing in reverse order by changing the values like following code:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+15
+10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you forget any of the steps in while loop it will stuck in infinite loop, which we will cover later in this chapter.</p>
+</div>
+</div>
+<div class="section" id="range-function">
+<h2>range() function<a class="headerlink" href="#range-function" title="Permalink to this headline">¶</a></h2>
+<p>Some functions in python can be called with multiple arguments separated by a comma, and range() is one of them. range() function creates a sequence of integers, for that we have to mention following things:</p>
+<ul class="simple">
+<li><p>start - The number from where sequence will start, its just like initialization from while loop.</p></li>
+<li><p>stop - The number where the sequence will end, just like the condition of while loop to stop the loop.</p></li>
+<li><p>step- The number which tells how much differene will be between next valud of the sequence, increment/decrement from while loop.</p></li>
+</ul>
+<p>So if you remember we have mentioned in the start of the lesson those 3 properties of loops being used by for loop but in quite different way with the help of range() function.</p>
+<p>The general syntax of <strong>range()</strong> function is : <code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(1, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above code is not giving us the output because in Python 3 range() won’t display the complete sequence of integers. Hence we need for loop which will iterate over this sequence and display every element of the sequence until it ends. Let’s use the same sequence as above and create a for loop.</p>
+</div>
+<div class="section" id="for-loop">
+<h2>for loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">¶</a></h2>
+<p>A for loop is a programming construct that allows you to iterate over a collection of items or perform a set number of iterations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Stop argument</em> - Always remember it is excluded from the sequence. If you want the sequence from 0 to 10 both numbers included then your range() should be like range(0,11,1).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now what’s happenning in the above code is we are mentioning the start as 1 and stop as 6 (i.e.- the sequence will become 1, 2, 3, 4, 5), and we haven’t mentioned step so it automatically take it value as +1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Step argument</em>  - Step is to tell the difference between two consecutive numbers of the sequence. For example range(1,5,1) the step is +1 means increment. By default the value of step is +1 even if you didn’t provide it’s value it will be +1.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>In above code we haven’t mentioned start and step argument both. The only value we have provided is stop. And it automatically starts from 0.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>Start argument</em> - Start is to tell range from where the sequence should start. By default it’s value is 0, means if you don’t provide the start number it will automatically start from 0 as shown above.</p>
+</div>
+<p>As we have written a code for numbers divisible by 5 using while loop, we can do it using for loop too. As shown below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">21</span><span class="p">):</span> <span class="c1"># stop value will be 21 because 20 should get included in the sequence</span>
+  <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+15
+20
+</pre></div>
+</div>
+</div>
+</div>
+<p>This example shows the similarity between for and while loop. If you know the end point or stopping point of the loop you can use both the loops.</p>
+<p>But if you have to repeat something until some condition is False and you don’t know how many times the loop should repeat itself, then go with while loop.</p>
+<p>Till now you have seen that both the loops only gets over when it reaches its stopping point/condition.</p>
+<p>But we can stop the loop before it reaches it’s stopping point/condition. by mentioning break statement.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="break-statement">
+<h2>break statement :<a class="headerlink" href="#break-statement" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>break statement helps you stop any loop before it reaches it stop point. you just have to write break as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">==</span><span class="mi">4</span><span class="p">:</span>
+    <span class="k">break</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 2 3 
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="continue-statement">
+<h2>continue statement<a class="headerlink" href="#continue-statement" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>continue is opposite of break statement. continue statement will skip the loop to next value when the mentioned condition arises and go on until the loop reaches its stop point. Let’s understand it using code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">3</span><span class="p">:</span>
+    <span class="k">continue</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 2 4 5 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="types-of-loops">
+<h2>Types of loops:<a class="headerlink" href="#types-of-loops" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nested-loops">
+<h3>1 . Nested Loops<a class="headerlink" href="#nested-loops" title="Permalink to this headline">¶</a></h3>
+<p>Nested term in programming is used to show one thing is inside the other. Here we are using the term nested loop, it means one loop inside the other. for example while loop inside another while loop or for loop inside another for loop or for loop inside while loop or vice versa. Let’s understand it using few examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 0
+0 1
+0 2
+1 0
+1 1
+1 2
+2 0
+2 1
+2 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now if you look closely you will observe that unless until the loop which is inside is gets over the outer loop won’t increment to next value. In simple word nexted loop acn be used to create possible combination of numbers.</p>
+</div>
+<div class="section" id="infinite-loop">
+<h3>2 . Infinite Loop<a class="headerlink" href="#infinite-loop" title="Permalink to this headline">¶</a></h3>
+<p>It is a loop which will go on until you explicitly break the loop. Usually infinte loop is created with while loop. Most of the time it could happen with you because you loop couldn’t reach it’s stop point. If it happens with you can just stop the execution by interrupting the runtime from google colab’s runtime section.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="for-else-loop">
+<h3>3 . for-else loop<a class="headerlink" href="#for-else-loop" title="Permalink to this headline">¶</a></h3>
+<p>In Python, for-else loop is a variation of the for loop. It has an optional else block that gets executed after the loop completes, but only if the loop completes normally (i.e., without encountering a break statement).</p>
+<p>Here’s the syntax for a for-else loop in Python:</p>
+<p>Here’s an example of a for-else loop in Python that uses the range function to loop through a sequence of numbers and prints a message when the loop completes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop completed normally&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+Loop completed normally
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="while-else-loop">
+<h3>4 . while-else loop<a class="headerlink" href="#while-else-loop" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to include an “else” clause after a “while” loop. This code will execute if the loop terminates normally (i.e., if the condition in the “while” statement becomes false).</p>
+<p>For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is now greater than or equal to 10&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+x is now greater than or equal to 10
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pass-keyword">
+<h3>5 . <code class="docutils literal notranslate"><span class="pre">pass</span></code> keyword<a class="headerlink" href="#pass-keyword" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">pass</span></code> keyword is a way to indicate that you want to do nothing in a certain block of code. It can be useful as a placeholder when you’re working on code and haven’t yet implemented a certain section.</p>
+<p>For example, in a loop where you want to perform some action if a certain condition is true, but do nothing if the condition is false, you could use the <code class="docutils literal notranslate"><span class="pre">pass</span></code> keyword to indicate that nothing should be done in the <code class="docutils literal notranslate"><span class="pre">else</span></code> block:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+      <span class="k">pass</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;reached at pass statement&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+reached at pass statement
+4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pre-test-loop-and-post-test-loop">
+<h2>Pre-test loop and Post-test loop<a class="headerlink" href="#pre-test-loop-and-post-test-loop" title="Permalink to this headline">¶</a></h2>
+<p>In Python, a pre-test loop (also called a “while loop”) and a post-test loop (also called a “do-while loop”) can be implemented using the following code structures:</p>
+<div class="section" id="pres-test-while-loop">
+<h3>1 . Pres-test(while loop)<a class="headerlink" href="#pres-test-while-loop" title="Permalink to this headline">¶</a></h3>
+<p>The loop will continue to run as long as the condition is true. Here’s an example that prints out the numbers 1 to 5 using a pre-test loop:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="post-test-loop-do-while-loop">
+<h3>2 . Post-test loop (do-while loop)<a class="headerlink" href="#post-test-loop-do-while-loop" title="Permalink to this headline">¶</a></h3>
+<p>The loop will run at least once before checking the condition. If the condition is true, the loop will continue to run, otherwise it will exit. Here’s an example that asks the user to enter a number between 1 and 10, and keeps asking until a valid number is entered:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number between 1 and 10: &quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You entered:&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter a number between 1 and 10: 15
+Enter a number between 1 and 10: 17
+Enter a number between 1 and 10: 6
+You entered: 6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="practice-questions">
+<h2>Practice Questions<a class="headerlink" href="#practice-questions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="difficulty-level-easy">
+<h3>Difficulty Level : Easy<a class="headerlink" href="#difficulty-level-easy" title="Permalink to this headline">¶</a></h3>
+<p>Q. Create a program to display the first 10 even numbers in reverse order in a single line using end parameter of print function.</p>
+<p><strong>Note</strong> : Use both the loops.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. Create a program that displays numbers starting from 20 to 40 with a difference of 5 in a single line using end parameter of print function.</p>
+<p><strong>Note</strong> : Use both the loops.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. Create a program to display the cube of first 5 numbers in single line using end parameter of print function.</p>
+<p><strong>Note</strong> : Use both the loops.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. Create a program to display the factorial of a number.</p>
+<p><strong>Note</strong> : Use both the loops with positive and negative step values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="difficulty-level-medium">
+<h3>Difficulty Level : Medium<a class="headerlink" href="#difficulty-level-medium" title="Permalink to this headline">¶</a></h3>
+<p>Q. Create a program that keeps on accepting input from user until 0 is entered and print the sum of all the numbers entered at the end.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. Create a program to print the following series for <code class="docutils literal notranslate"><span class="pre">n</span></code> terms where <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number taken from the user.</p>
+<p><strong>Series</strong> : 2,22,222,2222,…… n terms</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. Create a program to print factorial of given number.</p>
+<p>for example:       n=5</p>
+<p>output: factorial of 5 is 120.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="difficulty-level-hard">
+<h3>Difficulty Level : Hard<a class="headerlink" href="#difficulty-level-hard" title="Permalink to this headline">¶</a></h3>
+<p>Q. Create a program to print all prime numbers from 0 to limit. Take limit as input.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. Create a program that displays the first number divisible by 5 between 6 to 16 and then break the loop.</p>
+<p><strong>Note</strong> : Use both the loops.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. Create a program that replicates the following output :</p>
+<p><strong>Note</strong> : Use both the loops.</p>
+<p>The Multiplication Table of 2</p>
+<p>2 x 1 = 2</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>The Multiplication Table of 3</p>
+<p>3 x 1 = 3</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<p>The Multiplication Table of 4</p>
+<p>4 x 1 = 4</p>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. To check whether input number is <strong>Armstrong number</strong> or not . An <strong>Armstrong number</strong> is an integer with three digits such that the sum of the cubes of its digits is equal to the number itself.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course_material"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02_flow_control.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Flow Control</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04_list.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lists</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By aiadventures<br/>
+    
+        &copy; Copyright 2023.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

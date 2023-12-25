@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Handling &#8212; Python Course</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Oject Oriented Programming" href="08_OOP.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo_com.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python Course</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_expressions.html">
+   Expressions
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_flow_control.html">
+   Flow Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_loops.html">
+   Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_list.html">
+   Lists
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_tuple_n_dictionaries.html">
+   Tuple
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_strings.html">
+   Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_OOP.html">
+   Oject Oriented Programming
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   File Handling
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/course_material/09_files.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-paths">
+   File Paths
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-current-working-directory">
+   The Current Working Directory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relative-path-and-absolute-path">
+   Relative Path and Absolute Path :**
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relative-path">
+     1 . Relative Path
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#absolute-paths">
+     2 . Absolute Paths
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-files">
+   Types of Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-methods-operations">
+   File Methods / Operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-function">
+     1 . open() function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-function">
+     read() function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#close-function">
+     close() function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#write-function">
+     write() function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-position">
+     File Position
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-problems">
+   Practice problems
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>File Handling</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-paths">
+   File Paths
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-current-working-directory">
+   The Current Working Directory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relative-path-and-absolute-path">
+   Relative Path and Absolute Path :**
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relative-path">
+     1 . Relative Path
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#absolute-paths">
+     2 . Absolute Paths
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-files">
+   Types of Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#file-methods-operations">
+   File Methods / Operations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#open-function">
+     1 . open() function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-function">
+     read() function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#close-function">
+     close() function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#write-function">
+     write() function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-position">
+     File Position
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-problems">
+   Practice problems
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="file-handling">
+<h1>File Handling<a class="headerlink" href="#file-handling" title="Permalink to this headline">¶</a></h1>
+<p>Python Variables are good to store data while your program is running, but if you want your data to persist even after your program has finished, you need to save it to a file. You can think of a file’s contents as a single string value. In this chapter, you will learn how to use Python to create, read, and save files on the hard drive.</p>
+<p>Before we can work with files, we need to learn what file paths are. So, lets dive in …</p>
+<p><img alt="" src="../_images/unit_9_01.png" /></p>
+<div class="section" id="file-paths">
+<h2>File Paths<a class="headerlink" href="#file-paths" title="Permalink to this headline">¶</a></h2>
+<p>Every file in your computer is stored in a particular location. Lets say, you save all your photos in F:drive inside photos folder. This is the location where you will find all your photos. This is how you organise your files and remember the locations.</p>
+<p>The file path is a string that specifies the location of a file on the computer. It has three major parts:</p>
+<p><strong>Folder Path</strong>: the file folder location on the file system where subsequent folders are separated by a forward slash (in Unix) or backslash (in Windows)</p>
+<p><strong>File Name:</strong> the actual name of the file</p>
+<p><strong>Extension:</strong> the end of the file path pre-pended with a period ( . ) used to indicate the file type.</p>
+<p>For example, you have a photo called ‘random.png’ in the path F:\photos</p>
+<p><img alt="" src="../_images/unit_9_02.png" /></p>
+</div>
+<div class="section" id="the-current-working-directory">
+<h2>The Current Working Directory<a class="headerlink" href="#the-current-working-directory" title="Permalink to this headline">¶</a></h2>
+<p>Every program that runs on your computer has a current working directory, or cwd. Any filenames or paths that do not begin with the root folder are assumed to be under the current working directory. You can get the current working directory as a string value with the <strong>os.getcwd()</strong> function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You see two backslashs instead of one, because one is used an escape character and the other is the actual separator. You can read more about escape characters <a class="reference external" href="https://">https://www.w3schools.com/python/gloss_python_escape_characters.asp</a></p>
+<p>You can change the current working directory with <strong>os.chdir()</strong>.</p>
+</div>
+</div>
+<div class="section" id="relative-path-and-absolute-path">
+<h2>Relative Path and Absolute Path :**<a class="headerlink" href="#relative-path-and-absolute-path" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="relative-path">
+<h3>1 . Relative Path<a class="headerlink" href="#relative-path" title="Permalink to this headline">¶</a></h3>
+<p>A relative path is a path that is relative to the current working directory. In other words, it specifies the location of a file or directory relative to the current directory. Relative paths are often used when referring to files or directories within the same project or directory structure.
+Here’s an example of a relative file path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">data</span><span class="o">/</span><span class="n">myfile</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>This path specifies that the file <strong>myfile.txt</strong> is located in a subdirectory called <strong>data</strong> that is located in the current working directory. The <strong>” . “</strong> in the path represents the current working directory.</p>
+</div>
+<div class="section" id="absolute-paths">
+<h3>2 . Absolute Paths<a class="headerlink" href="#absolute-paths" title="Permalink to this headline">¶</a></h3>
+<p>An absolute path is a path that specifies the exact location of a file or directory on the file system. Absolute paths are often used when referring to files or directories outside of the current directory structure.
+Here’s an example of an absolute file path:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">documents</span><span class="o">/</span><span class="n">myfile</span><span class="o">.</span><span class="n">txt</span>
+
+</pre></div>
+</div>
+<p>This path specifies that the file <strong>myfile.txt</strong> is located in the <strong>documents</strong> directory, which is located in the <strong>user</strong> directory, which is located in the <strong>home</strong> directory. The path starts from the root directory <strong>” / “</strong>.</p>
+<p><img alt="" src="../_images/unit_9_03.png" /></p>
+</div>
+</div>
+<div class="section" id="types-of-files">
+<h2>Types of Files<a class="headerlink" href="#types-of-files" title="Permalink to this headline">¶</a></h2>
+<p>There are two types of files: binary and text files.</p>
+<ul class="simple">
+<li><p>Binary files are files that contain data in a format that is not human-readable.</p></li>
+<li><p>Text files, on the other hand, contain data that is human-readable, such as plain text or data in a structured format like CSV or JSON.</p></li>
+</ul>
+<p><img alt="" src="../_images/unit_9_04.png" /></p>
+</div>
+<div class="section" id="file-methods-operations">
+<h2>File Methods / Operations<a class="headerlink" href="#file-methods-operations" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="../_images/unit_9_05.png" /></p>
+<div class="section" id="open-function">
+<h3>1 . open() function<a class="headerlink" href="#open-function" title="Permalink to this headline">¶</a></h3>
+<p>To open a file with the <strong>open()</strong> function, you pass it a string path indicating the path of the file you want to open; it can be either an absolute or relative path. The <strong>open()</strong> function returns a File object.</p>
+<p>Before we can read a file, we will have to create it.</p>
+<p>Check your current working directory <strong>(cwd)</strong>.</p>
+<p>Create a new text file named sample.txt in your current working directory.</p>
+<p>Open sample.txt and write some random text in it.</p>
+<p>Save the changes and close the file.</p>
+<p>Lets try to open sample.txt. The file path can be written as sample.txt.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">note</span><span class="p">}</span> <span class="n">The</span> <span class="n">path</span> <span class="n">might</span> <span class="n">be</span> <span class="n">different</span><span class="p">,</span> <span class="k">if</span> <span class="n">you</span> <span class="n">have</span> <span class="n">created</span> <span class="n">the</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">some</span> <span class="n">other</span> <span class="n">directory</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/content/sample.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above command will open the file in read mode. When a file is opened in read mode, Python lets you only read data from the file; you can’t write or modify it in any way. Read mode is the default mode for files you open in Python.</p>
+<p>The call to <strong>open()</strong> returns a File object / File descriptor. A <strong>File object</strong> represents a file on your computer; it is simply another type of value in Python, much like the lists and dictionaries you’re already familiar with. File object can be thought of as a “read/write pointer” and you can also perform operations like moving the “read/write pointer”, which determines where in the file data is read from and where it is written to.</p>
+<p>In the previous example, we stored the File object in the variable f. Now, whenever you want to interact with the file, you can do so by calling methods on the File object in variable f.</p>
+</div>
+<div class="section" id="read-function">
+<h3>read() function<a class="headerlink" href="#read-function" title="Permalink to this headline">¶</a></h3>
+<p>If you want to read the entire contents of a file as a string value, use the File object’s <strong>read()</strong> method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;India has emerged as a major hub for IT companies, with a booming technology industry that has made significant contributions to the global IT sector. The country is home to a large number of IT companies, including some of the world&#39;s largest and most successful firms.\nSome of the biggest IT companies in India include Tata Consultancy Services (TCS), Infosys, Wipro, HCL Technologies, and Tech Mahindra. These companies have a global presence, with offices and clients all over the world.&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="close-function">
+<h3>close() function<a class="headerlink" href="#close-function" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+{note}
+
+It’s important to remember that it’s your responsibility to close the file. You can close your file by calling **close()** method of the file object. Not closing the file can have unintended effects.
+</pre></div>
+</div>
+<p>Instead of <strong>read()</strong> you can use the <strong>readlines()</strong> method to get a list of string values from the file, one string for each line of text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sample.txt&#39;</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;India has emerged as a major hub for IT companies, with a booming technology industry that has made significant contributions to the global IT sector. The country is home to a large number of IT companies, including some of the world&#39;s largest and most successful firms.\n&quot;, &#39;Some of the biggest IT companies in India include Tata Consultancy Services (TCS), Infosys, Wipro, HCL Technologies, and Tech Mahindra. These companies have a global presence, with offices and clients all over the world.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">note</span><span class="p">}</span>
+
+<span class="n">Except</span> <span class="k">for</span> <span class="n">the</span> <span class="n">last</span> <span class="n">line</span> <span class="n">of</span> <span class="n">the</span> <span class="n">file</span><span class="p">,</span> <span class="n">each</span> <span class="n">of</span> <span class="n">the</span> <span class="n">string</span> <span class="n">values</span> <span class="n">ends</span> <span class="k">with</span> <span class="n">a</span> <span class="n">newline</span> <span class="n">character</span> <span class="o">**</span>\<span class="n">n</span><span class="o">**.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="write-function">
+<h3>write() function<a class="headerlink" href="#write-function" title="Permalink to this headline">¶</a></h3>
+<p>Python allows you to write content to a file in a way similar to how the <strong>print()</strong> function writes strings to the screen. You can’t write to a file you’ve opened in read mode, though. Instead, you need to open it in write mode and append mode.</p>
+<p><strong>Write mode</strong> will overwrite the existing file and start from scratch, just like when you overwrite a variable’s value with a new value. Pass ** ‘w’ ** as the second argument to <strong>open()</strong> to open the file in write mode.</p>
+<p><strong>Append mode</strong>, on the other hand, will append text to the end of the existing file. You can think of this as appending to a list in a variable, rather than overwriting the variable altogether. Pass ‘a’ as the second argument to <strong>open()</strong> to open the file in append mode.</p>
+<p>If the filename passed to <strong>open()</strong> does not exist, both write and append mode will create a new, blank file. After reading or writing a file, call the <strong>close()</strong> method before opening the file again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fw</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sample2.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="c1"># write mode</span>
+<span class="n">fw</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is written by python.&#39;</span><span class="p">)</span>
+<span class="n">fw</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fw</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sample2.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="c1"># append mode</span>
+<span class="n">fw</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;This is an appended text&#39;</span><span class="p">)</span>
+<span class="n">fw</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sample2.txt&#39;</span><span class="p">)</span> <span class="c1"># reading mode</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This is written by python.This is an appended text&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="file-position">
+<h3>File Position<a class="headerlink" href="#file-position" title="Permalink to this headline">¶</a></h3>
+<p>In Python, file position refers to the current position of the pointer within a file. This pointer is used to indicate the current read or write location within a file.</p>
+<p>You can get the current file position using the <strong>tell()</strong> method of a file object. The tell() method returns an integer that represents the current position of the file pointer.</p>
+<p>Here’s an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a file for reading</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;sample.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="c1"># Get the current position of the file pointer</span>
+<span class="n">position</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current position:&quot;</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
+
+<span class="c1"># Close the file</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Current position: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, the <strong>tell()</strong> method is used to get the current position of the file pointer. The position is then printed to the console.</p>
+<p>You can also set the file position using the <strong>seek()</strong> method of a file object. The <strong>seek()</strong> method takes two arguments: <strong>offset</strong> and <strong>whence</strong>.</p>
+<p>The <strong>offset</strong> argument specifies the number of bytes to move the file pointer, and the <strong>whence</strong> argument specifies the reference point from which to move the pointer. The <strong>whence</strong> argument can take one of three values:</p>
+<ul class="simple">
+<li><p><strong>0</strong>: move the file pointer relative to the beginning of the file</p></li>
+<li><p><strong>1</strong>: move the file pointer relative to the current position</p></li>
+<li><p><strong>2</strong>: move the file pointer relative to the end of the file</p></li>
+</ul>
+<p>Here’s an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open a file for reading</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;sample.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move the file pointer to the beginning of the file</span>
+<span class="n">file</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Read the first line of the file</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+<span class="c1"># Print the line to the console</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="c1"># Close the file</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>India has emerged as a major hub for IT companies, with a booming technology industry that has made significant contributions to the global IT sector. The country is home to a large number of IT companies, including some of the world&#39;s largest and most successful firms.
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, the <strong>seek()</strong> method is used to move the file pointer to the beginning of the file. The <strong>readline()</strong> method is then used to read the first line of the file. The line is printed to the console, and then the file is closed.</p>
+</div>
+</div>
+<div class="section" id="practice-problems">
+<h2>Practice problems<a class="headerlink" href="#practice-problems" title="Permalink to this headline">¶</a></h2>
+<p>Q. Write a function <code class="docutils literal notranslate"><span class="pre">display_words()</span></code> in python to read lines from a text file <code class="docutils literal notranslate"><span class="pre">&quot;story.txt&quot;</span></code>, and display unique words, which are less than 4 characters. Keep in mind “the” and “The” are two different values.
+The content of the file is given below.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;India</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">fastest-growing</span> <span class="pre">economy.</span> <span class="pre">India</span> <span class="pre">is</span> <span class="pre">looking</span> <span class="pre">for</span> <span class="pre">more</span> <span class="pre">investments</span> <span class="pre">around</span> <span class="pre">the</span> <span class="pre">globe.</span> <span class="pre">The</span> <span class="pre">whole</span> <span class="pre">world</span> <span class="pre">is</span> <span class="pre">looking</span> <span class="pre">at</span> <span class="pre">India</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">great</span> <span class="pre">market.</span> <span class="pre">Most</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">Indians</span> <span class="pre">can</span> <span class="pre">foresee</span> <span class="pre">the</span> <span class="pre">heights</span> <span class="pre">that</span> <span class="pre">India</span> <span class="pre">is</span> <span class="pre">capable</span> <span class="pre">of</span> <span class="pre">reaching.&quot;</span></code></p>
+<p><strong>For Example:-</strong></p>
+<p>def display_words(file):
+### your code here</p>
+<p>file = your/path/to/story.txt</p>
+<p>display_words(file1)</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>[‘the’, ‘for’, ‘The’, ‘as’, ‘at’, ‘is’, ‘can’, ‘a’, ‘of’]</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. Aditi has used a text editing software to type some text. After saving the article as <code class="docutils literal notranslate"><span class="pre">words.txt</span></code>, she realised that she has wrongly typed <code class="docutils literal notranslate"><span class="pre">alphabet</span> <span class="pre">J</span></code> in place of <code class="docutils literal notranslate"><span class="pre">alphabet</span> <span class="pre">I</span></code> everywhere in the article.
+Your task is to write a function named as <code class="docutils literal notranslate"><span class="pre">JTOI()</span></code> such that it would display the corrected version of entire content of the file <code class="docutils literal notranslate"><span class="pre">words.txt</span></code> with all the alphabets “J” to be displayed as an alphabet “I” on screen.</p>
+<p>Note: <strong>Assuming that <code class="docutils literal notranslate"><span class="pre">words.txt</span></code> contains wrongly typed J alphabet otherwise.</strong></p>
+<p>Example:</p>
+<p>If Aditi has stored the following content in the file WORDS.TXT:</p>
+<p>“WELL, THJS JS A WORD BY JTSELF. YOU COULD STRETCH THJS TO BE A SENTENCE.”</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">JTOI()</span></code> should display the following content:</p>
+<p>“WELL, THIS IS A WORD BY ITSELF. YOU COULD STRETCH THIS TO BE A SENTENCE.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. Write a program to read first 10 characters from the file and display it from giving text.</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;India</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">fastest-growing</span> <span class="pre">economy.</span> <span class="pre">India</span> <span class="pre">is</span> <span class="pre">looking</span> <span class="pre">for</span> <span class="pre">more</span> <span class="pre">investments</span> <span class="pre">around</span> <span class="pre">the</span> <span class="pre">globe.</span> <span class="pre">The</span> <span class="pre">whole</span> <span class="pre">world</span> <span class="pre">is</span> <span class="pre">looking</span> <span class="pre">at</span> <span class="pre">India</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">great</span> <span class="pre">market.</span> <span class="pre">Most</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">Indians</span> <span class="pre">can</span> <span class="pre">foresee</span> <span class="pre">the</span> <span class="pre">heights</span> <span class="pre">that</span> <span class="pre">India</span> <span class="pre">is</span> <span class="pre">capable</span> <span class="pre">of</span> <span class="pre">reaching.&quot;</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q. Write a program that counts the number of tabs and new line characters in a file.</p>
+<p><strong>Text to create file :</strong></p>
+<p>“India is a diverse country that offers a wide range of tourism experiences. From the snow-capped mountains of the Himalayas in the north to the beaches of Goa and Kerala in the south, there’s something for everyone.</p>
+<p>Some of the top tourist attractions in India include:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- The Taj Mahal in Agra, one of the Seven Wonders of the World
+- The historic forts and palaces of Rajasthan, such as the Amber Fort in Jaipur and the Mehrangarh Fort in Jodhpur
+- The backwaters of Kerala, where you can take a houseboat ride and enjoy the serene beauty of the region
+- The hill stations of the Himalayas, such as Shimla, Darjeeling, and Manali, which offer a respite from the heat of the plains
+- The bustling cities of Delhi, Mumbai, and Kolkata, which offer a glimpse into modern India
+</pre></div>
+</div>
+<p>India is also known for its rich cultural heritage, which can be seen in its art, music, dance, and cuisine. Whether you’re interested in history, nature, or culture, India has something to offer every type of traveler.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course_material"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="08_OOP.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Oject Oriented Programming</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By aiadventures<br/>
+    
+        &copy; Copyright 2023.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
