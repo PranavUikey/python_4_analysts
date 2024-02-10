@@ -1,509 +1,391 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Tuple &#8212; Python Course</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    
-      
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
-
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'course_material/05_tuple_n_dictionaries';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Functions" href="06_functions.html" />
     <link rel="prev" title="Lists" href="04_list.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="01_expressions.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo_com.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Python Course</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="01_expressions.html">
-   Expressions
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="02_flow_control.html">
-   Flow Control
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_loops.html">
-   Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="04_list.html">
-   Lists
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Tuple
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="06_functions.html">
-   Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="07_strings.html">
-   Strings
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="08_OOP.html">
-   Oject Oriented Programming
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09_files.html">
-   File Handling
-  </a>
- </li>
+    
+    
+    <img src="../_static/logo_com.png" class="logo__image only-light" alt="Python Course - Home"/>
+    <script>document.write(`<img src="../_static/logo_com.png" class="logo__image only-dark" alt="Python Course - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="01_expressions.html">
+                    Expressions
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="02_flow_control.html">Flow Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_list.html">Lists</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tuple</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="06_functions.html">Functions</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="07_strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_OOP.html">Object Oriented Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09_files.html">File Handling</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/course_material/05_tuple_n_dictionaries.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/course_material/05_tuple_n_dictionaries.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
 
-        </div>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tuple</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tuple-data-type">
-   Tuple data type
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#comparing-tuples">
-     Comparing tuples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tuple-assignments">
-     Tuple Assignments
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#updating-tuple">
-     Updating Tuple
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deleting-tuple">
-     Deleting Tuple
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zip-fuction">
-     zip() fuction
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dictionary">
-   Dictionary
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#operations-and-methods">
-     Operations and Methods
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-dictionary">
-     Creating dictionary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-items">
-     Accessing items
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-items">
-     Adding items
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#assign-a-new-key-value-pair">
-       1 .  Assign a new key-value pair
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#update-method">
-       2 .
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         update()
-        </span>
-       </code>
-       method
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#removing-items">
-       Removing items
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#del-statement">
-       1 . del statement
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pop-method">
-       2 . pop() method
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#changing-value">
-     Changing value
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#methods-in-dictionary">
-     Methods in dictionary
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#multiple-assignment-with-dictionaries">
-       Multiple Assignment with Dictionaries
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practice-questions">
-   Practice Questions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#difficulty-level-easy">
-     Difficulty Level : Easy
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#difficulty-level-medium">
-     Difficulty Level : Medium
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#difficulty-level-hard">
-     Difficulty Level : Hard
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tuple</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-data-type">Tuple data type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-tuples">Comparing tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-assignments">Tuple Assignments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-tuple">Updating Tuple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-tuple">Deleting Tuple</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">Dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-and-methods">Operations and Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dictionary">Creating dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-items">Accessing items</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-items">Adding items</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-a-new-key-value-pair-without-in-built-function">1 .  Assign a new key-value pair without in-built function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-a-new-key-value-pair-using-update-method">2 . Assign a new key-value pair using <code class="docutils literal notranslate"><span class="pre">update()</span></code> method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-items">Removing items</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#del-statement-removes-item-from-dictionary-using-key">1 . del statement removes item from dictionary using key</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pop-method">2 . pop() method</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-value">Changing value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-in-dictionary">Methods in dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traversing-dictionaries">Traversing Dictionaries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-questions">Practice Questions</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tuple</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tuple-data-type">
-   Tuple data type
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#comparing-tuples">
-     Comparing tuples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tuple-assignments">
-     Tuple Assignments
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#updating-tuple">
-     Updating Tuple
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deleting-tuple">
-     Deleting Tuple
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#zip-fuction">
-     zip() fuction
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dictionary">
-   Dictionary
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#operations-and-methods">
-     Operations and Methods
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-dictionary">
-     Creating dictionary
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-items">
-     Accessing items
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-items">
-     Adding items
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#assign-a-new-key-value-pair">
-       1 .  Assign a new key-value pair
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#update-method">
-       2 .
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         update()
-        </span>
-       </code>
-       method
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#removing-items">
-       Removing items
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#del-statement">
-       1 . del statement
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pop-method">
-       2 . pop() method
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#changing-value">
-     Changing value
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#methods-in-dictionary">
-     Methods in dictionary
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#multiple-assignment-with-dictionaries">
-       Multiple Assignment with Dictionaries
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practice-questions">
-   Practice Questions
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#difficulty-level-easy">
-     Difficulty Level : Easy
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#difficulty-level-medium">
-     Difficulty Level : Medium
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#difficulty-level-hard">
-     Difficulty Level : Hard
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="tuple">
-<h1>Tuple<a class="headerlink" href="#tuple" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tuple">
+<h1>Tuple<a class="headerlink" href="#tuple" title="Link to this heading">#</a></h1>
 <p>Lists aren’t the only data types that represent ordered sequences of values. For example, tuples and lists are actually similar.Many of the things you can do with lists can also be done with tuple: indexing; slicing; and using them with for loops, with len().</p>
 <p><img alt="" src="../_images/unit_5_01.png" /></p>
-<div class="section" id="tuple-data-type">
-<h2>Tuple data type<a class="headerlink" href="#tuple-data-type" title="Permalink to this headline">¶</a></h2>
+<section id="tuple-data-type">
+<h2>Tuple data type<a class="headerlink" href="#tuple-data-type" title="Link to this heading">#</a></h2>
 <p><img alt="" src="../_images/unit_5_02.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -545,13 +427,13 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
 <span class="n">t1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100,)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(11,)
 </pre></div>
 </div>
 </div>
@@ -559,8 +441,8 @@
 <p>In Python, (11,) is a tuple with a single element 11.</p>
 <p>The comma after 11 is important because it differentiates a tuple with a single element from a simple integer with parentheses.</p>
 <p>To create a tuple in Python, you simply enclose the elements in parentheses and separate them with commas.</p>
-<div class="section" id="comparing-tuples">
-<h3>Comparing tuples<a class="headerlink" href="#comparing-tuples" title="Permalink to this headline">¶</a></h3>
+<section id="comparing-tuples">
+<h3>Comparing tuples<a class="headerlink" href="#comparing-tuples" title="Link to this heading">#</a></h3>
 <p>In Python, you can compare tuples using the comparison operators such as <strong>&lt;, &lt;=, &gt;, &gt;=, ==</strong>, and <strong>!=</strong>.</p>
 <p>Tuples are compared element-wise, starting from the leftmost element, and the comparison stops as soon as a mismatch is found.</p>
 <div class="cell docutils container">
@@ -583,9 +465,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="tuple-assignments">
-<h3>Tuple Assignments<a class="headerlink" href="#tuple-assignments" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tuple-assignments">
+<h3>Tuple Assignments<a class="headerlink" href="#tuple-assignments" title="Link to this heading">#</a></h3>
 <p>Tuple assignment is a feature in Python that allows you to assign multiple variables at once by unpacking the values in a tuple. Here’s an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -641,9 +523,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="updating-tuple">
-<h3>Updating Tuple<a class="headerlink" href="#updating-tuple" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="updating-tuple">
+<h3>Updating Tuple<a class="headerlink" href="#updating-tuple" title="Link to this heading">#</a></h3>
 <p>Tuples are immutable. So we an extract, assign or update values of one tuple by creating another tuple.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -660,9 +542,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="deleting-tuple">
-<h3>Deleting Tuple<a class="headerlink" href="#deleting-tuple" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="deleting-tuple">
+<h3>Deleting Tuple<a class="headerlink" href="#deleting-tuple" title="Link to this heading">#</a></h3>
 <p>we can delete tuple using <strong>del</strong> statement.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -695,37 +577,18 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="zip-fuction">
-<h3>zip() fuction<a class="headerlink" href="#zip-fuction" title="Permalink to this headline">¶</a></h3>
-<p>In Python, the <strong>zip()</strong> function can be used to combine two or more iterables into a single iterable of tuples. Each tuple contains the corresponding elements from the input iterables.</p>
-<p>Here’s an example:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">my_tuple</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(10, &#39;apple&#39;), (20, &#39;banana&#39;), (30, &#39;cherry&#39;)]
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="dictionary">
-<h2>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="dictionary">
+<h2>Dictionary<a class="headerlink" href="#dictionary" title="Link to this heading">#</a></h2>
 <p><img alt="" src="../_images/unit_5_03.png" /></p>
-<div class="section" id="operations-and-methods">
-<h3>Operations and Methods<a class="headerlink" href="#operations-and-methods" title="Permalink to this headline">¶</a></h3>
+<section id="operations-and-methods">
+<h3>Operations and Methods<a class="headerlink" href="#operations-and-methods" title="Link to this heading">#</a></h3>
 <p><strong>In code, a dictionary is typed with braces, { }.</strong></p>
 <p><img alt="" src="../_images/unit_5_04.png" /></p>
-</div>
-<div class="section" id="creating-dictionary">
-<h3>Creating dictionary<a class="headerlink" href="#creating-dictionary" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="creating-dictionary">
+<h3>Creating dictionary<a class="headerlink" href="#creating-dictionary" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myphone</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;brand&#39;</span><span class="p">:</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="s1">&#39;iphoneX&#39;</span><span class="p">}</span>
@@ -739,9 +602,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="accessing-items">
-<h3>Accessing items<a class="headerlink" href="#accessing-items" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="accessing-items">
+<h3>Accessing items<a class="headerlink" href="#accessing-items" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myphone</span><span class="p">[</span><span class="s1">&#39;brand&#39;</span><span class="p">]</span>
@@ -754,11 +617,11 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="adding-items">
-<h3>Adding items<a class="headerlink" href="#adding-items" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="assign-a-new-key-value-pair">
-<h4>1 .  Assign a new key-value pair<a class="headerlink" href="#assign-a-new-key-value-pair" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="adding-items">
+<h3>Adding items<a class="headerlink" href="#adding-items" title="Link to this heading">#</a></h3>
+<section id="assign-a-new-key-value-pair-without-in-built-function">
+<h4>1 .  Assign a new key-value pair without in-built function<a class="headerlink" href="#assign-a-new-key-value-pair-without-in-built-function" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
@@ -774,9 +637,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="update-method">
-<h4>2 . <code class="docutils literal notranslate"><span class="pre">update()</span></code> method<a class="headerlink" href="#update-method" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="assign-a-new-key-value-pair-using-update-method">
+<h4>2 . Assign a new key-value pair using <code class="docutils literal notranslate"><span class="pre">update()</span></code> method<a class="headerlink" href="#assign-a-new-key-value-pair-using-update-method" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="s1">&#39;grapes&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">}</span>
@@ -794,18 +657,17 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="removing-items">
-<h4>Removing items<a class="headerlink" href="#removing-items" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="del-statement">
-<h4>1 . del statement<a class="headerlink" href="#del-statement" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="removing-items">
+<h4>Removing items<a class="headerlink" href="#removing-items" title="Link to this heading">#</a></h4>
+</section>
+<section id="del-statement-removes-item-from-dictionary-using-key">
+<h4>1 . del statement removes item from dictionary using key<a class="headerlink" href="#del-statement-removes-item-from-dictionary-using-key" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;original dictionary &#39;</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
 <span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;banana&quot;</span><span class="p">]</span>
-
 <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -817,9 +679,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="pop-method">
-<h4>2 . pop() method<a class="headerlink" href="#pop-method" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="pop-method">
+<h4>2 . pop() method<a class="headerlink" href="#pop-method" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
@@ -837,10 +699,10 @@ True
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="changing-value">
-<h3>Changing value<a class="headerlink" href="#changing-value" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="changing-value">
+<h3>Changing value<a class="headerlink" href="#changing-value" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
@@ -856,98 +718,149 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="methods-in-dictionary">
-<h3>Methods in dictionary<a class="headerlink" href="#methods-in-dictionary" title="Permalink to this headline">¶</a></h3>
-<p><img alt="" src="../_images/unit_5_05.png" /></p>
+</section>
+<section id="methods-in-dictionary">
+<h3>Methods in dictionary<a class="headerlink" href="#methods-in-dictionary" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">clear()</span></code> functions is used to delete all the elements in a dictionary</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a dictionary</span>
-<span class="n">my_dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-
-<span class="c1"># clear() method</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict_1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
 <span class="n">my_dict_1</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_dict_1</span><span class="p">)</span>
-
-<span class="c1"># fromkeys() method</span>
-<span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">]</span>
-<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">my_dict_2</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_dict_2</span><span class="p">)</span>
-
-<span class="c1"># get() method</span>
-<span class="n">my_dict_3</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">value</span> <span class="o">=</span> <span class="n">my_dict_3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-
-
-<span class="c1"># items() method : (dictionary &amp; tuple)</span>
-<span class="n">my_dict_4</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">items</span> <span class="o">=</span> <span class="n">my_dict_4</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
-
-
-<span class="c1"># keys() method</span>
-<span class="n">my_dict_5</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">keys</span> <span class="o">=</span> <span class="n">my_dict_5</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
-
-
-<span class="c1"># values() method</span>
-<span class="n">my_dict_6</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">values</span> <span class="o">=</span> <span class="n">my_dict_6</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-
-
-<span class="c1"># pop() method</span>
-<span class="n">my_dict_7</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">value</span> <span class="o">=</span> <span class="n">my_dict_7</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_dict_7</span><span class="p">)</span>
-
-
-<span class="c1"># popitem() method</span>
-<span class="n">my_dict_8</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">item</span> <span class="o">=</span> <span class="n">my_dict_8</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_dict_8</span><span class="p">)</span>
-
-
-<span class="c1"># setdefault() method</span>
-<span class="n">my_dict_9</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">value</span> <span class="o">=</span> <span class="n">my_dict_9</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;pear&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_dict_9</span><span class="p">)</span>
-
-
-<span class="c1"># update() method</span>
-<span class="n">my_dict_10</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
-<span class="n">new_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pear&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;kiwi&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<span class="n">my_dict_10</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_dict</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_dict_10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
-{&#39;apple&#39;: 0, &#39;banana&#39;: 0, &#39;orange&#39;: 0}
-3
-dict_items([(&#39;apple&#39;, 2), (&#39;banana&#39;, 3), (&#39;orange&#39;, 1)])
-dict_keys([&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;])
-dict_values([2, 3, 1])
-3
-{&#39;apple&#39;: 2, &#39;orange&#39;: 1}
-(&#39;orange&#39;, 1)
-{&#39;apple&#39;: 2, &#39;banana&#39;: 3}
-4
-{&#39;apple&#39;: 2, &#39;banana&#39;: 3, &#39;orange&#39;: 1, &#39;pear&#39;: 4}
-{&#39;apple&#39;: 2, &#39;banana&#39;: 3, &#39;orange&#39;: 1, &#39;pear&#39;: 4, &#39;kiwi&#39;: 2}
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="multiple-assignment-with-dictionaries">
-<h4>Multiple Assignment with Dictionaries<a class="headerlink" href="#multiple-assignment-with-dictionaries" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">get()</span></code> function is used to get values of keys from dictionary but if value is not present it returns <code class="docutils literal notranslate"><span class="pre">None</span></code> or specified value</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict_3</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">my_dict_3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;banana&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict_3</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">my_dict_3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;bananas&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict_3</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">my_dict_3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;bananas&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">items()</span></code> returns both keys and values from dictionary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict_4</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">items</span> <span class="o">=</span> <span class="n">my_dict_4</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;apple&#39;, 2), (&#39;banana&#39;, 3), (&#39;orange&#39;, 1)])
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">keys()</span></code> function returns all the keys from dictionary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict_5</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="n">my_dict_5</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;apple&#39;, &#39;banana&#39;, &#39;orange&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">values()</span></code> function returns all the values from dictionary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict_6</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">my_dict_6</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([2, 3, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<section id="traversing-dictionaries">
+<h4>Traversing Dictionaries<a class="headerlink" href="#traversing-dictionaries" title="Link to this heading">#</a></h4>
+<p>Accessing all keys from dictionary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">key</span>  <span class="ow">in</span> <span class="n">person</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name
+age
+location
+</pre></div>
+</div>
+</div>
+</div>
+<p>Accessing all the values from the dictionary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">key</span>  <span class="ow">in</span> <span class="n">person</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>John
+25
+New York
+</pre></div>
+</div>
+</div>
+</div>
+<p>Accessing both keys and values from dictionary</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}</span>
@@ -964,63 +877,102 @@ location New York
 </div>
 </div>
 </div>
-<p>Above code iterates over the key-value pairs in the person dictionary using a for loop and the items() method.</p>
+</section>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="set">
+<h1>Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h1>
+<p>The next basic collection is the set, which contains unordered collections of unique items. They are defined much like lists and tuples, except they use the curly brackets of dictionaries, { }:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a dictionary</span>
-<span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;New York&#39;</span><span class="p">}</span>
-
-<span class="c1"># Assign multiple values to multiple variables</span>
-<span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">location</span> <span class="o">=</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">],</span> <span class="n">person</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span>
-
-<span class="c1"># Print the values of the variables</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>        <span class="c1"># Output: John</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>         <span class="c1"># Output: 25</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>    <span class="c1"># Output: New York</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">primes</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">}</span>
+<span class="n">odds</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you’re familiar with the mathematics of sets, you’ll be familiar with operations like the union, intersection, difference, symmetric difference, and others. Python’s sets have all of these operations built-in, via methods or operators. For each, we’ll show the two equivalent methods:</p>
+<p><strong>union</strong> items appearing in either</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span> <span class="o">|</span> <span class="n">odds</span><span class="p">)</span>      <span class="c1"># with an operator</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">odds</span><span class="p">))</span> <span class="c1"># equivalently with a method</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>John
-25
-New York
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 5, 7, 9}
+{1, 2, 3, 5, 7, 9}
 </pre></div>
 </div>
 </div>
 </div>
-<p>Multiple assignment with dictionaries allows you to assign multiple values to multiple variables at once using a dictionary. This can be useful when you have a dictionary with multiple key-value pairs and you want to assign each value to a separate variable.</p>
-</div>
-</div>
-</div>
-<div class="section" id="practice-questions">
-<h2>Practice Questions<a class="headerlink" href="#practice-questions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="difficulty-level-easy">
-<h3>Difficulty Level : Easy<a class="headerlink" href="#difficulty-level-easy" title="Permalink to this headline">¶</a></h3>
-<p>Q. Write a Python program to find the maximum and minimum value in a tuple.</p>
-<p><strong>Example :</strong></p>
-<p>my_tuple = (1, 2, 3, 4, 5)</p>
-<blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><p>max_value = 5</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-<blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><p>min_value = 1</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
+<p><strong>intersection</strong> items appearing in both</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">primes</span> <span class="o">&amp;</span> <span class="n">odds</span><span class="p">)</span>             <span class="c1"># with an operator</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">odds</span><span class="p">))</span> <span class="c1"># equivalently with a method</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{3, 5, 7}
+{3, 5, 7}
 </pre></div>
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">set()</span></code> converts list or tuple to set</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5, 6, 11}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 2, 3, 4, 5, 6, 11}
+</pre></div>
+</div>
+</div>
+</div>
+<section id="practice-questions">
+<h2>Practice Questions<a class="headerlink" href="#practice-questions" title="Link to this heading">#</a></h2>
+<p>Q. How do you concatenate two tuples?</p>
+<p><strong>Example :</strong></p>
+<p>tuple1 = (1, 2)</p>
+<p>tuple2 = (3, 4)</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>(1, 2, 3, 4)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Q. How do you access the second element of a tuple?</p>
+<p><strong>Example :</strong></p>
+<p>my_tuple = (1, 2, 3)</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>2</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
 <p>Q. Write a Python program to count the number of occurrences of an element in a tuple.</p>
+<p><strong>Example :</strong></p>
 <p>my_tuple = (1, 2, 3, 4, 5, 3, 2, 1, 3)</p>
 <blockquote>
 <div><blockquote>
@@ -1030,161 +982,81 @@ New York
 </div></blockquote>
 </div></blockquote>
 <p>Q. Create a dictionary named student and it should contain your Name, Gender, Age &amp; Programming language. After creating it add a new key Roll number and set its value as 43.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Q. Create a code that takes 2 dictionaries which
-returns the total bill after selling every fruit according to their rate specified.</p>
 <p><strong>Example :</strong></p>
-<p>stock = {“banana”: 6, “apple”: 0, “orange”: 32, “pear”: 15}</p>
-<p>prices = {“banana”: 4, “apple”: 2, “orange”: 1.5, “pear”: 3}</p>
+<p>student = {“Name”:”AI”,”Gender”:”Male”,”Age”:99,”Programming Language”:”Assembly”}</p>
 <blockquote>
 <div><blockquote>
 <div><blockquote>
-<div><p>Total bill : 117.0</p>
+<div><p>{“Name”:”AI”,”Gender”:”Male”,”Age”:99,”Programming Language”:”Assembly”,”Roll no”:43}</p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Q. Create a dictionary by assigning the keys from a list and its values from the user using input function.</p>
-<p><strong>List :</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">keys_list</span> <span class="pre">=</span> <span class="pre">[</span> <span class="pre">&quot;Name&quot;,</span> <span class="pre">&quot;Birth</span> <span class="pre">Month&quot;,</span> <span class="pre">&quot;Programming</span> <span class="pre">Language&quot;,</span> <span class="pre">&quot;Salary&quot;</span> <span class="pre">]</span></code></p>
-</div>
-<div class="section" id="difficulty-level-medium">
-<h3>Difficulty Level : Medium<a class="headerlink" href="#difficulty-level-medium" title="Permalink to this headline">¶</a></h3>
-<p>Q. Write a program to create the tuple using the dictionary elements. The elements of tuple should be arranged in sorted order based on values of dictionary elements.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;AAA&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;BBB&#39;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;CCC&#39;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="s1">&#39;DDD&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Q. Create a code that displays the unique elements present inside the dictionary in descending order in a single line.</p>
+<p>Q. Create a code that displays the unique elements present inside the dictionary.</p>
+<p><strong>Hint use <code class="docutils literal notranslate"><span class="pre">set()</span></code> for unique elements</strong></p>
 <p><strong>Example :</strong></p>
 <p>marks = {“English”: 78, “Maths”: 89, “Science”: 92, “History”: 89, “Geography”: 77, “Physics”: 92, “Chemistry”: 78}</p>
 <blockquote>
 <div><blockquote>
 <div><blockquote>
-<div><p>92 89 78 77</p>
+<div><p>78 89 92 77</p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Q. Create a code for tuple of countries and display the number of vowels in the name of each country.</p>
+<p>Q. Delete orange from this dictionary.</p>
 <p><strong>Example :</strong></p>
-<p>asian_countries = (‘afghanistan’, ‘bangladesh’, ‘bhutan’, ‘china’, ‘india’, ‘iran’, ‘iraq’, ‘israel’,’japan’)</p>
+<p>d = {“apple”: 2, “banana”: 3, “orange”: 1}</p>
 <blockquote>
 <div><blockquote>
-<div></div></blockquote>
+<div><blockquote>
+<div><p>{“apple”: 2, “banana”: 3}</p>
 </div></blockquote>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>afghanistan has 4 vowels.
-
-bangladesh has 3 vowels.
-
-bhutan has 2 vowels.
-
-china has 2 vowels.
-
-india has 3 vowels.
-
-iran has 2 vowels.
-
-iraq has 2 vowels.
-
-israel has 3 vowels.
-
-japan has 2 vowels.
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="difficulty-level-hard">
-<h3>Difficulty Level : Hard<a class="headerlink" href="#difficulty-level-hard" title="Permalink to this headline">¶</a></h3>
-<p>Q. Write a program that will find all the numbers between 1000 and 3000 (both included) such that each digit of the number is an even number and the numbers obtained should be printed in a comma - separated sequence on a single line.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Q. Create a code that will try to mimic the SUPEROVER scenario from Cricket. You have to create 2 dictionaries for 2 teams and each dictionary will contain the outcome of 6 balls bowled in the superover as key (i.e- run scored on that ball) and values of that dictionary will be as follows:</p>
-<ul class="simple">
-<li><p>‘W’ : 0 runs</p></li>
-<li><p>‘R’ : 1-6 runs</p></li>
-</ul>
-<p>The runs scored will be generated randomly using <code class="docutils literal notranslate"><span class="pre">random</span></code> module by using <code class="docutils literal notranslate"><span class="pre">random.randint(0,6)</span></code> and make sure that you are including the number 5 in dictionary deliberately even though there is no 5 runs in cricket. You also have to track the number of wickets fallen in that superover.</p>
-<p>Also make sure that your dictionary has 6 unique keys for every deliveries in a superover. The output of the code should be dictionaries of both the teams and scorecard along with the number of wickets fallen, by comparing the scores of both the teams show which team has won in superover, as shown in the example below:</p>
+</div></blockquote>
+</div></blockquote>
+<p>Q. Change the value of apple to 7000 in this dictionary</p>
 <p><strong>Example :</strong></p>
-<p>Performance of Team1 : {0: ‘W’, 1: ‘R’, 3: ‘R’, 4: ‘R’, 5: ‘R’, 6: ‘R’}</p>
-<p>Performance of Team2 : {0: ‘W’, 1: ‘R’, 3: ‘R’, 4: ‘R’, 5: ‘R’, 6: ‘R’}</p>
-<p>Scorecard of Team1 : 19 / 1</p>
-<p>Scorecard of Team2 : 19 / 1</p>
+<p>d = {“apple”: 2, “banana”: 3, “orange”: 1}</p>
 <blockquote>
 <div><blockquote>
 <div><blockquote>
-<div><p>Its a Draw!</p>
+<div><p>{“apple”: 7000, “banana”: 3, “orange”: 1}</p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
-<p>Performance of Team1 : {0: ‘W’, 1: ‘R’, 2: ‘R’, 4: ‘R’, 5: ‘R’, 6: ‘R’}</p>
-<p>Performance of Team2 : {0: ‘W’, 1: ‘R’, 2: ‘R’, 3: ‘R’, 4: ‘R’, 6: ‘R’}</p>
-<p>Scorecard of Team1 : 18 / 1</p>
-<p>Scorecard of Team2 : 16 / 1</p>
+<p>Q. Display each key and its length from dictionary</p>
+<p><strong>Example :</strong></p>
+<p>d = {“apple”: 2, “banana”: 3, “orange”: 1}</p>
 <blockquote>
 <div><blockquote>
 <div><blockquote>
-<div><p>Team1 wins by 2 runs!</p>
+<div><p>“apple” 5 ,
+“banana”  6 ,
+“orange”  6,</p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
-<p>Performance of Team1 : {0: ‘W’, 1: ‘R’, 3: ‘R’, 4: ‘R’, 5: ‘R’, 6: ‘R’}</p>
-<p>Performance of Team2 : {0: ‘W’, 1: ‘R’, 2: ‘R’, 3: ‘R’, 4: ‘R’, 5: ‘R’}</p>
-<p>Scorecard of Team1 : 19 / 1</p>
-<p>Scorecard of Team2 : 15 / 1</p>
+<p>Q. Convert given list to set</p>
+<p><strong>Example :</strong></p>
+<p>l = [1,1,1,11,2,3]</p>
 <blockquote>
 <div><blockquote>
 <div><blockquote>
-<div><p>Team1 wins by 4 runs!</p>
+<div><p>{1, 2, 3, 11}</p>
 </div></blockquote>
 </div></blockquote>
 </div></blockquote>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code ##</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<p>Q. Combine to sets</p>
+<p><strong>Example :</strong></p>
+<p>set1 = {2, 7, 3, 5 ,3,4,5,}</p>
+<p>set2 = {1,  9, 3, 5,5,2,21,1}</p>
+<blockquote>
+<div><blockquote>
+<div><blockquote>
+<div><p>{1, 2, 3, 4, 5, 7, 9, 21}</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1198,7 +1070,7 @@ japan has 2 vowels.
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./course_material"
         },
         predefinedOutput: true
@@ -1206,44 +1078,136 @@ japan has 2 vowels.
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="04_list.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lists</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04_list.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lists</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="06_functions.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="06_functions.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Functions</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
+                </footer>
+              
+            </div>
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By aiadventures<br/>
-    
-        &copy; Copyright 2023.<br/>
-  </p>
-</footer>
-</main>
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-      </div>
-    </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tuple</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-data-type">Tuple data type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-tuples">Comparing tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple-assignments">Tuple Assignments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-tuple">Updating Tuple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-tuple">Deleting Tuple</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary">Dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-and-methods">Operations and Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-dictionary">Creating dictionary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-items">Accessing items</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-items">Adding items</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-a-new-key-value-pair-without-in-built-function">1 .  Assign a new key-value pair without in-built function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-a-new-key-value-pair-using-update-method">2 . Assign a new key-value pair using <code class="docutils literal notranslate"><span class="pre">update()</span></code> method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-items">Removing items</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#del-statement-removes-item-from-dictionary-using-key">1 . del statement removes item from dictionary using key</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pop-method">2 . pop() method</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-value">Changing value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-in-dictionary">Methods in dictionary</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#traversing-dictionaries">Traversing Dictionaries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practice-questions">Practice Questions</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By aiadventures
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
